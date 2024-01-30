@@ -24,3 +24,14 @@ print("result is", m)
 x = 5
 y = 3
 print("result is", x * y)
+
+x = 10
+y = 15
+print("Comparing == result is ", x == y)
+print("Comparing != result is ", x != y)
+print("Comparing <= result is ", x <= y)
+print("Comparing >= result is ", x >= y)
+
+x = 1.1 + 2.2
+print("x is ", x)
+print("x is ", x == 3.3)
