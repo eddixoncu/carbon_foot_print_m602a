@@ -1,37 +1,20 @@
-msg = "Roll the dice"
-print(msg)
-m = 10 * 5
-print("result is", m)
-m = 6 - 3
-print("result is", m)
-m = 68.75 * 0
-print("result is", m)
-m = 100 / 17
-print("result is", m)
-m = 100 % 17
-print("result is", m)
+data = input("Enter a string : ")
+print("Data's length is ", len(data))
 
-zero = 0.0
-try:
-    m = 100 / zero
-    print("result is", m)
-except Exception as e:
-    print('Something wrong happened', e)
+number1 = input("Enter number 1: ")
+number2 = input("Enter number 2: ")
+print("The sum is: ", int(number1) + int(number2))
 
-m = 2 ** 3
-print("result is", m)
+data = input("Enter a new string : ")
+data = data.replace("a", "*")
+data = data.replace("e", "*")
+data = data.replace("i", "*")
+data = data.replace("o", "*")
+data = data.replace("u", "*")
+data = data.replace("A", "*")
+data = data.replace("E", "*")
+data = data.replace("I", "*")
+data = data.replace("O", "*")
+data = data.replace("U", "*")
 
-x = 5
-y = 3
-print("result is", x * y)
-
-x = 10
-y = 15
-print("Comparing == result is ", x == y)
-print("Comparing != result is ", x != y)
-print("Comparing <= result is ", x <= y)
-print("Comparing >= result is ", x >= y)
-
-x = 1.1 + 2.2
-print("x is ", x)
-print("x is ", x == 3.3)
+print("Replaced data is ", data)
