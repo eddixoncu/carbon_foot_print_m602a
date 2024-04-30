@@ -1,54 +1,34 @@
 print('Welcome Advanced programming')
 
 
-class Item:
+class BirdSpecies:
 
-    def __init__(self, name, price):
+    def __init__(self, name, habitat,wing_span):
         self.name = name
-        self.price = price
+        self.habitat = habitat
+        self.wing_span = wing_span
+    
+    def describe(self):
+        return f'name: {self.name}\thabitat: {self.habitat}\twing_span: {self.wing_span}'
 
 
-def get_available_items():
-    items = [Item("Razor", 50), Item("Balm", 20), Item("Brush", 15)]
+class Eagle (BirdSpecies):
+    def __init__(self, name, habitat, wing_span, specie):
+        super().__init__(name, habitat, wing_span)
+        self.specie = specie
 
-    return items
-
-
-def get_shop_cart(items, razors, balms, brushes):
-    shop_cart = {}
-    for item in items:
-        if item.name == "Razor":
-            shop_cart[item.name] = [item.price, razors]
-        elif item.name == "Balm":
-            shop_cart[item.name] = [item.price, balms]
-        elif item.name == "Brush":
-            shop_cart[item.name] = [item.price, brushes]
-    return shop_cart
-
-def print_shop_cart(shop_cart:{}):
-    total = 0.0
-    for item in shop_cart:
-        print(f'{item}\tunit price {shop_cart[item][0]}\tquantity {shop_cart[item][1]}\tsub total {shop_cart[item][0]*shop_cart[item][1]}')
-        total += shop_cart[item][0]*shop_cart[item][1]
-
-    print(f"TOTAL : {total}")
+    def to_prey (self, prey):
+        return f'this {self.specie} {self.name} is preying a/an {prey} '
 
 
 def main():
-    items = get_available_items()
-    idx = 1
-    for item in items:
-        print(f'{idx}\titem {item.name} \tprice {item.price} ')
-        idx += 1
+    print("Main")
+    bird = BirdSpecies("Eagle", "Mountains", 15)
+    print(bird.describe())
 
-    qty_razors = int(input("Enter number of razors to buy "))
-    qty_balm = int(input("Enter number of balm to buy "))
-    qty_brushes = int(input("Enter number of brushes to buy "))
+    bald_eagle = Eagle("eagle", "mountains", 15, "bald")
+    print(bald_eagle.to_prey("trout"))
 
-    cart = get_shop_cart(items, qty_razors, qty_balm, qty_brushes)
-    print_shop_cart(cart)
-
-    
 
 if __name__ == "__main__":
     main()
